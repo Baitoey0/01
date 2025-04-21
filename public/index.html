@@ -1,0 +1,111 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whispeer</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Home Page -->
+  <div class="page" id="home-page">
+    <main class="center">
+      <h1><a id="Wellcom">Welcome to Whispeer</a></h1>
+      <p><a id="Detail">ส่งข้อความโดยไม่ต้องเปิดเผยตัวตน</p>
+      <p>บอกสิ่งที่อยู่ในใจแบบนิรนามได้เต็มที่</a></p>
+      <button id="go-login" class="btn-main">Login</button>
+      <button id="go-search" class="btn-main">🔍 Search User</button>
+    </main>
+  </div>
+
+<!-- Search Page -->
+<div class="page" id="search-page" style="display: none;">
+  <main class="center">
+    <h2>Search User</h2>
+    <input type="text" id="search-username" placeholder="Enter username to send message" />
+    <button id="search-btn" class="btn-main">Search</button>
+    <button id="back-home-from-search" class="btn-secondary">Back</button>
+  </main>
+</div>
+
+<!-- Anonymous Send Page -->
+<div class="page" id="anon-send-page" style="display: none;">
+  <main class="center">
+    <h2>Send Anonymous Message</h2>
+    <p>Sending message to <span id="target-username"></span></p>
+    <textarea id="anon-message" placeholder="Your anonymous message..."></textarea>
+    <button id="anon-send-btn" class="btn-main">Send</button>
+  </main>
+</div>
+
+  <!-- Login Page -->
+  <div class="page" id="login-page" style="display: none;">
+    <main class="center">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Enter username" />
+      <input type="password" id="password" placeholder="Enter password" />
+      <div class="avatar-picker">
+        <div class="avatar-choice selected" data-color="#c3e7f8" style="background:#c3e7f8;"></div>
+        <div class="avatar-choice" data-color="#fce3ec" style="background: #fce3ec ;"></div>
+        <div class="avatar-choice" data-color="#ffe8d6" style="background: #ffe8d6;"></div>
+      </div>
+      <button id="login-btn" class="btn-main">Continue</button>
+      <button id="back-home" class="btn-secondary">Back</button>
+    </main>
+  </div>
+
+  <!-- Feed Page -->
+  <div class="page" id="feed-page" style="display: none;">
+    <header class="header messages-header">
+      <h2>Messages</h2>
+      <div class="profile-section">
+        <div class="avatar"></div>
+        <span class="username">username</span>
+        <button id="go-profile" class="btn-secondary">Profile</button>
+        <button id="logout-btn">Logout</button>
+      </div>
+    </header>
+    <main>
+      <div class="messages">
+        <div class="message-card">
+          <p class="message-text">We do not have a great day, we MAKE a great day.</p>
+          <div class="actions">
+            <button class="heart-btn"><i class="fas fa-heart"></i> Reply</button>
+            <button class="pin-btn">📌 Pin</button>
+            <button class="delete-btn"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Profile Page -->
+  <div class="page full-page" id="profile-page" style="display: none;">
+    <header class="header white-top">
+      <button class="back-btn" id="back-feed">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <h1 class="profile-title">Profile</h1>
+      <div style="width: 40px;"></div> <!-- สำหรับบาลานซ์ layout -->
+    </header>
+
+    <main class="profile-content">
+      <div class="avatar-large chosen-avatar"></div>
+      <textarea id="message-input" placeholder="Send me a message..."></textarea>
+      <button id="send-btn">Send</button>
+    </main>
+  
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
